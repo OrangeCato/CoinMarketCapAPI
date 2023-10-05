@@ -6,7 +6,7 @@ import xlsxwriter
 local_currency = 'USD'
 local_symbol = '$'
 
-api_key = '6ca83e50-96ec-453c-bb9f-40f2d321ce2d'
+api_key = 'YOUR_API_KEY'
 headers = {'X-CMC_PRO_API_KEY': api_key}
 
 base_url = 'https://pro-api.coinmarketcap.com'
