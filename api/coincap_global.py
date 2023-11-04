@@ -1,9 +1,12 @@
 import requests
 import json
+import os
+
+# set env variable e.g. export coinmarketcap_api_key=YOUR_API_KEY
+api_key = os.environ.get('coinmarketcap_api_key')
 
 local_currency = 'USD'
 local_symbol = '$'
-api_key = 'YOUR_API_KEY'
 headers = {'X-CMC_PRO_API_KEY': api_key}
 
 base_url = 'https://pro-api.coinmarketcap.com'
@@ -12,9 +15,6 @@ global_url = base_url + '/v1/global-metrics/quotes/latest?convert=' + local_curr
 
 request = requests.get(global_url, headers=headers)
 results = request.json()
-
-# print(json.dumps(results, sort_keys=True, indent=4))
-
 data = results["data"]
 
 btc_dominance = data["btc_dominance"]

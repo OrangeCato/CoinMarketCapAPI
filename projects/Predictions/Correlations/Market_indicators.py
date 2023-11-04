@@ -1,4 +1,5 @@
 import requests
+import os
 
 def fetch_market_indicators(api_key, time_start, time_end, count, interval, convert):
     headers = {'X-CMC_PRO_API_KEY': api_key}
@@ -28,7 +29,8 @@ def fetch_market_indicators(api_key, time_start, time_end, count, interval, conv
     # btc dominance, altcoin season index, crypto market cap, blockchain metrics?, trading  volumes.
     # I NEED TO UPGRADE MY API ACCOUNT TO PULL HISTORICAL DATA
 def main():
-    api_key = 'YOUR_API_KEY'
+    # set env variable e.g. export coinmarketcap_api_key=YOUR_API_KEY
+    api_key = os.environ.get('coinmarketcap_api_key')
     time_start = ''
     time_end = ''
     count = 10

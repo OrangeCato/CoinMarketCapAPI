@@ -1,16 +1,14 @@
-from email import header
-from email.mime import base
 import math
 import json
-import locale
-from pickletools import markobject
 import requests
 from prettytable import PrettyTable
+import os
+
+# set env variable e.g. export coinmarketcap_api_key=YOUR_API_KEY
+api_key = os.environ.get('coinmarketcap_api_key')
 
 local_currency = 'USD'
 local_symbol = '$'
-
-api_key = 'YOUR_API_KEY'
 headers = {'X-CMC_PRO_API_KEY': api_key}
 
 base_url = 'https://pro-api.coinmarketcap.com'

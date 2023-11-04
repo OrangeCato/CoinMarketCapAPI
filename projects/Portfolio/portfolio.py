@@ -7,8 +7,8 @@ from colorama import Fore, Back, Style
 
 local_currency = 'USD'
 local_symbol = '$'
-
-api_key = 'YOUR_API_KEY'
+# set env variable e.g. export coinmarketcap_api_key=YOUR_API_KEY
+api_key = os.environ.get('coinmarketcap_api_key')
 headers = {'X-CMC_PRO_API_KEY': api_key}
 
 base_url = 'https://pro-api.coinmarketcap.com'

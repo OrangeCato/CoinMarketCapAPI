@@ -2,6 +2,7 @@ import json
 import requests
 import sqlite3
 from datetime import datetime
+import os
 
 def fetch_and_insert_crypto_data(api_key, local_currency, start, db_path):
     local_symbol = '$'
@@ -44,7 +45,8 @@ def fetch_and_insert_crypto_data(api_key, local_currency, start, db_path):
 
 # Example usage in your main script:
 if __name__ == "__main__":
-    api_key = 'YOUR_API_KEY'
+    # set env variable e.g. export coinmarketcap_api_key=YOUR_API_KEY
+    api_key = os.environ.get('coinmarketcap_api_key')
     local_currency = 'USD'
     start = 1
     db_path = '/Users/alessandrazamora/Desktop/MLrsc/CoinMarketCap/projects/HistoricalData/Data_updated_24h.db'
