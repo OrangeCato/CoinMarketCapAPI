@@ -1,3 +1,3 @@
-# Ignore virtual environment directory
-myenv/
-
+.DS_Store
+Projects/HistoricalData/
+venv/
